@@ -40,4 +40,8 @@ public final class Pregunta {
     public void setRespuestas(ArrayList respuestas) {
         this.respuestas = respuestas;
     }
+    
+    public void no(){
+        
+    }
 }
