@@ -3,6 +3,7 @@ package preguntas.y.respuestas;
 import vista.configuracion;
 import vista.inicio;
 import vista.pantalla_de_juego;
+import vista.pantalla_final;
 import vista.puntuaciones;
 
 /**
@@ -21,7 +22,8 @@ public class PreguntasYRespuestas {
 //        c.setVisible(true);
 //        puntuaciones p = new puntuaciones();
 //        p.setVisible(true);
-        pantalla_de_juego.main(args);
+//        pantalla_de_juego.main(args);
+        pantalla_final.main(args);
     }
     
 }
