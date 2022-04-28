@@ -1,6 +1,7 @@
 package vista;
 
 import java.awt.Color;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,6 +17,9 @@ public class pantalla_de_juego extends javax.swing.JFrame {
     }
     
     private int xMouse, yMouse;
+    private String preguntas;
+    private ArrayList<String> respuestas;
+    private String rondas;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -46,6 +50,7 @@ public class pantalla_de_juego extends javax.swing.JFrame {
         respuestaD = new java.awt.TextField();
         btnRendirse = new javax.swing.JPanel();
         rendirse = new javax.swing.JLabel();
+        ronda = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -245,6 +250,11 @@ public class pantalla_de_juego extends javax.swing.JFrame {
             .addComponent(rendirse, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
         );
 
+        ronda.setFont(new java.awt.Font("Showcard Gothic", 1, 14)); // NOI18N
+        ronda.setForeground(new java.awt.Color(0, 0, 51));
+        ronda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ronda.setText("Ronda");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -271,11 +281,17 @@ public class pantalla_de_juego extends javax.swing.JFrame {
                 .addContainerGap(159, Short.MAX_VALUE)
                 .addComponent(btnRendirse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(159, 159, 159))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(173, 173, 173)
+                .addComponent(ronda, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addGap(8, 8, 8)
+                .addComponent(ronda)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -285,7 +301,7 @@ public class pantalla_de_juego extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addComponent(btnRendirse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -382,6 +398,7 @@ public class pantalla_de_juego extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> {
             new pantalla_de_juego().setVisible(true);
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -404,6 +421,7 @@ public class pantalla_de_juego extends javax.swing.JFrame {
     private java.awt.TextField respuestaB;
     private java.awt.TextField respuestaC;
     private java.awt.TextField respuestaD;
+    private javax.swing.JLabel ronda;
     private javax.swing.JLabel volver;
     // End of variables declaration//GEN-END:variables
 }

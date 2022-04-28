@@ -1,4 +1,4 @@
-package consultas;
+package sql;
 
 import java.sql.*;
 import java.util.logging.Level;

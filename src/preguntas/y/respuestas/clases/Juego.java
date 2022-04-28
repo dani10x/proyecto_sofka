@@ -6,22 +6,28 @@ package preguntas.y.respuestas.clases;
  */
 public class Juego {
     private final Jugador jugador;
-    private final Ronda ronda;
     private final Premio premio;
+    private Ronda ronda;
+    private Pregunta pregunta;
+    private Categoria categoria;
     private DAOS daos;
 
     public Juego(Jugador jugador, DAOS daos) {
         this.jugador = jugador;
-        ronda= new Ronda();
         premio = new Premio();
         this.daos=daos;
-        
-//        ronda.setPregunta(daos.getPregunta(ronda.getNumRonda()));
+    }
+
+    public Jugador getJugador() {
+        return jugador;
+    }
+
+    public Premio getPremio() {
+        return premio;
     }
     
-    
-    
-    
-    
-    
+    public void nuevaPregunta(){
+        pregunta= daos.getPregunta(categoria);
+    }
+
 }

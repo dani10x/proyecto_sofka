@@ -1,8 +1,8 @@
 package preguntas.y.respuestas.clases;
 
+import sql.consultas;
 import java.util.ArrayList;
 import vista.inicio;
-import consultas.*;
 import java.sql.SQLException;
 
 /**
@@ -13,6 +13,8 @@ public class DAOS {
     private ArrayList<Pregunta> preguntas;
     private ArrayList<Respuesta> respuestas;
     private ArrayList<Categoria> categorias;
+    private Juego juego;
+    private Jugador jugador;
 
     public DAOS() {
         
@@ -47,21 +49,20 @@ public class DAOS {
             System.out.println(categoria.getNumCategoria());
         });
     }
+    public void iniciarJuego(){
+    }
     
-//    public Pregunta getPregunta(int categoria){
-//        int random = (int) Math.floor(Math.random()*(5)+1);
-//        int aux=1;
-//        for(int i=0; i<preguntas.size(); i++){
-//            if(preguntas.get(i).getCategoria().getNumCategoria()==categoria){
-//                if(aux==random){
-//                    return preguntas.get(i);
-//                }
-//                else{
-//                    aux++;
-//                }
-//            }
-//        }
-//        return null;
-//    }
-    
+    public Pregunta getPregunta(Categoria categoria){
+        int random=(int) Math.floor(Math.random()*(5)+1);
+        System.out.println(random);
+        for(int i=0; i<preguntas.size(); i++){
+            if(preguntas.get(i).getId_categoria().equals(categoria.getId_Categoria())){
+                if(random==1){
+                    return preguntas.get(i);
+                }
+                random--;
+            }
+        }
+        return null;
+    }  
 }

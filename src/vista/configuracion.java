@@ -1,6 +1,11 @@
 package vista;
 
 import java.awt.Color;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import preguntas.y.respuestas.clases.Jugador;
+import sql.inserciones;
 
 /**
  *
@@ -363,6 +368,12 @@ public class configuracion extends javax.swing.JFrame {
         if(nombre.getText().equals("") || nombre.getText().equals("Nombre del jugador")){
             advertencia.setVisible(true);
             return;
+        }
+        Jugador jugador = new Jugador(nombre.getText());
+        try {
+            inserciones.insertarJugador(jugador);
+        } catch (SQLException ex) {
+            Logger.getLogger(configuracion.class.getName()).log(Level.SEVERE, null, ex);
         }
         pantalla_de_juego.main();
         this.dispose();

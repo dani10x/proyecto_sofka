@@ -14,7 +14,7 @@ public final class Pregunta {
     public Pregunta(String id_categoria, String pregunta, ArrayList<String> respuestas) {
         this.id_categoria=id_categoria;
         this.pregunta = pregunta;
-        this.respuestas = respuestas;
+        this.respuestas=respuestas;
     }
 
     public String getId_categoria() {
