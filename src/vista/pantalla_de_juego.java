@@ -54,7 +54,7 @@ public class pantalla_de_juego extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelSuperior.setBackground(new java.awt.Color(0, 0, 51));
+        panelSuperior.setBackground(new java.awt.Color(255, 255, 255));
         panelSuperior.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         panelSuperior.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
@@ -85,7 +85,7 @@ public class pantalla_de_juego extends javax.swing.JFrame {
 
         jPanel1.add(panelSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 30));
 
-        btnVolver.setBackground(new java.awt.Color(0, 0, 51));
+        btnVolver.setBackground(new java.awt.Color(255, 255, 255));
         btnVolver.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         btnVolver.setForeground(new java.awt.Color(255, 255, 255));
         btnVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -110,7 +110,7 @@ public class pantalla_de_juego extends javax.swing.JFrame {
         btnVolver.setLayout(btnVolverLayout);
         btnVolverLayout.setHorizontalGroup(
             btnVolverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(volver, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+            .addComponent(volver, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
         );
         btnVolverLayout.setVerticalGroup(
             btnVolverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,12 +119,12 @@ public class pantalla_de_juego extends javax.swing.JFrame {
 
         jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 30, 30));
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 51));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.setForeground(new java.awt.Color(0, 0, 51));
 
         jLabel3.setFont(new java.awt.Font("Showcard Gothic", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setForeground(new java.awt.Color(0, 0, 51));
         jLabel3.setText("QUIZ!");
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/exploding (1)_1.png"))); // NOI18N
@@ -215,7 +215,7 @@ public class pantalla_de_juego extends javax.swing.JFrame {
             .addComponent(respuestaD, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        btnRendirse.setBackground(new java.awt.Color(255, 255, 255));
+        btnRendirse.setBackground(new java.awt.Color(0, 0, 51));
         btnRendirse.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnRendirse.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -227,7 +227,7 @@ public class pantalla_de_juego extends javax.swing.JFrame {
         });
 
         rendirse.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        rendirse.setForeground(new java.awt.Color(0, 0, 51));
+        rendirse.setForeground(new java.awt.Color(255, 255, 255));
         rendirse.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/darse-por-vencido.png"))); // NOI18N
         rendirse.setText("RENDIRSE");
 
