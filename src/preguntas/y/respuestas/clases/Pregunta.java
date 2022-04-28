@@ -56,4 +56,8 @@ public final class Pregunta {
             }
         }
     }
+    
+    public void nuevaPregunta(int categoria){
+        
+    }
 }

@@ -12,6 +12,16 @@ public final class Categoria {
         this.Id_Categoria = Id_Categoria;
         this.numCategoria = numCategoria;
     }
+
+    public String getId_Categoria() {
+        return Id_Categoria;
+    }
+
+    public int getNumCategoria() {
+        return numCategoria;
+    }
+    
+    
     
     
 }
