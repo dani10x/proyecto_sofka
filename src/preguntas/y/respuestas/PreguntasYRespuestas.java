@@ -1,10 +1,7 @@
 package preguntas.y.respuestas;
 
-import vista.configuracion;
-import vista.inicio;
-import vista.pantalla_de_juego;
-import vista.pantalla_final;
-import vista.puntuaciones;
+import java.sql.SQLException;
+import preguntas.y.respuestas.clases.DAOS;
 
 /**
  *
@@ -15,7 +12,7 @@ public class PreguntasYRespuestas {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
 //        inicio i = new inicio();
 //        i.setVisible(true);
 //        configuracion c = new configuracion();
@@ -23,7 +20,9 @@ public class PreguntasYRespuestas {
 //        puntuaciones p = new puntuaciones();
 //        p.setVisible(true);
 //        pantalla_de_juego.main(args);
-        pantalla_final.main(args);
+        DAOS daos = new DAOS();
+        daos.iniciar();
+        daos.print();
     }
     
 }

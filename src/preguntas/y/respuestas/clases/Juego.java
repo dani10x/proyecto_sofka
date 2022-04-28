@@ -16,7 +16,7 @@ public class Juego {
         premio = new Premio();
         this.daos=daos;
         
-        ronda.setPregunta(daos.getPregunta(ronda.getNumRonda()));
+//        ronda.setPregunta(daos.getPregunta(ronda.getNumRonda()));
     }
     
     
