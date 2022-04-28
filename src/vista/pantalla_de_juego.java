@@ -1,9 +1,13 @@
 package vista;
 
 import java.awt.Color;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import preguntas.y.respuestas.clases.Categoria;
 import preguntas.y.respuestas.clases.DAOS;
+import preguntas.y.respuestas.clases.Juego;
 import preguntas.y.respuestas.clases.Pregunta;
 import preguntas.y.respuestas.clases.Premio;
 import preguntas.y.respuestas.clases.Respuesta;
@@ -20,16 +24,16 @@ public class pantalla_de_juego extends javax.swing.JFrame {
      */
     public pantalla_de_juego(DAOS daos) {
         initComponents();
-        this.daos=daos;
+        this.daos = daos;
         rondas = new Ronda();
-        premio= new Premio();
+        premio = new Premio();
     }
-    
-    public void iniciar(){
+
+    public void iniciar() {
         juego();
         this.setVisible(true);
     }
-    
+
     private int xMouse, yMouse;
     private Ronda rondas;
     private Pregunta preguntas;
@@ -389,7 +393,7 @@ public class pantalla_de_juego extends javax.swing.JFrame {
     private void panelSuperiorMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelSuperiorMouseDragged
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
-        this.setLocation(x-xMouse, y-yMouse);
+        this.setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_panelSuperiorMouseDragged
 
     private void panelSuperiorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelSuperiorMousePressed
@@ -432,62 +436,95 @@ public class pantalla_de_juego extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAMouseClicked
 
     private void respuestaAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_respuestaAMouseClicked
-        if(respuestas.get(0).isCorrecta()){
-            if(rondas.getNumRonda()==5){
-                pantalla_final.main(daos, premio);
-                this.dispose();
+        if (respuestas.get(0).isCorrecta()) {
+            if (rondas.getNumRonda() == 5) {
+                premio.setDinero(rondas);
+                try {
+                    finalJuego();
+                } catch (SQLException ex) {
+                    Logger.getLogger(pantalla_de_juego.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            } else {
+                rondas.avanzarRonda();
+                juego();
             }
-            rondas.avanzarRonda();
-            juego();
-        }
-        else{
+        } else {
             premio.reset();
-            pantalla_final.main(daos, premio);
+            try {
+                finalJuego();
+            } catch (SQLException ex) {
+                Logger.getLogger(pantalla_de_juego.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_respuestaAMouseClicked
 
     private void respuestaCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_respuestaCMouseClicked
-        if(respuestas.get(2).isCorrecta()){
-            if(rondas.getNumRonda()==5){
-                pantalla_final.main(daos, premio);
-                this.dispose();
+        if (respuestas.get(2).isCorrecta()) {
+            if (rondas.getNumRonda() == 5) {
+                premio.setDinero(rondas);
+                try {
+                    finalJuego();
+                } catch (SQLException ex) {
+                    Logger.getLogger(pantalla_de_juego.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            } else {
+                rondas.avanzarRonda();
+                juego();
             }
-            rondas.avanzarRonda();
-            juego();
-        }
-        else{
+
+        } else {
             premio.reset();
-            pantalla_final.main(daos, premio);
+            try {
+                finalJuego();
+            } catch (SQLException ex) {
+                Logger.getLogger(pantalla_de_juego.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_respuestaCMouseClicked
 
     private void respuestaBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_respuestaBMouseClicked
-        if(respuestas.get(1).isCorrecta()){
-            if(rondas.getNumRonda()==5){
-                pantalla_final.main(daos, premio);
-                this.dispose();
+        if (respuestas.get(1).isCorrecta()) {
+            if (rondas.getNumRonda() == 5) {
+                premio.setDinero(rondas);
+                try {
+                    finalJuego();
+                } catch (SQLException ex) {
+                    Logger.getLogger(pantalla_de_juego.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            } else {
+                rondas.avanzarRonda();
+                juego();
             }
-            rondas.avanzarRonda();
-            juego();
-        }
-        else{
+        } else {
             premio.reset();
-            pantalla_final.main(daos, premio);
+            try {
+                finalJuego();
+            } catch (SQLException ex) {
+                Logger.getLogger(pantalla_de_juego.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_respuestaBMouseClicked
 
     private void respuestaDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_respuestaDMouseClicked
-        if(respuestas.get(3).isCorrecta()){
-            if(rondas.getNumRonda()==5){
-                pantalla_final.main(daos, premio);
-                this.dispose();
+        if (respuestas.get(3).isCorrecta()) {
+            if (rondas.getNumRonda() == 5) {
+                premio.setDinero(rondas);
+                try {
+                    finalJuego();
+                } catch (SQLException ex) {
+                    Logger.getLogger(pantalla_de_juego.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            } else {
+                rondas.avanzarRonda();
+                juego();
             }
-            rondas.avanzarRonda();
-            juego();
-        }
-        else{
+        } else {
             premio.reset();
-            pantalla_final.main(daos, premio);
+            try {
+                finalJuego();
+            } catch (SQLException ex) {
+                Logger.getLogger(pantalla_de_juego.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_respuestaDMouseClicked
 
@@ -517,9 +554,9 @@ public class pantalla_de_juego extends javax.swing.JFrame {
         }
         //</editor-fold>
     }
-    
-    private void juego(){
-        categorias=daos.getCategoria(rondas.getNumRonda());
+
+    private void juego() {
+        categorias = daos.getCategoria(rondas.getNumRonda());
         preguntas = daos.getPregunta(categorias);
         respuestas = daos.getRespuestas(preguntas.getRespuestas());
         premio.setDinero(rondas);
@@ -530,7 +567,16 @@ public class pantalla_de_juego extends javax.swing.JFrame {
         respuestaC.setText(respuestas.get(2).getRespuesta());
         respuestaD.setText(respuestas.get(3).getRespuesta());
         ronda.setText("RONDA " + rondas.getNumRonda());
-    } 
+    }
+
+    private void finalJuego() throws SQLException {
+
+        Juego juego = new Juego(daos.getJugador(), premio);
+        sql.inserciones.insertarJuego(juego);
+        pantalla_final.main(daos, premio);
+        this.dispose();
+
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btnA;

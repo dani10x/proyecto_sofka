@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import preguntas.y.respuestas.clases.Categoria;
+import preguntas.y.respuestas.clases.Juego;
 import preguntas.y.respuestas.clases.Pregunta;
 import preguntas.y.respuestas.clases.Respuesta;
 
@@ -75,5 +76,40 @@ public class consultas {
         }
         
         return categorias;
+    }
+    
+    public static String getId_Jugador(String nombre) throws SQLException{
+        String id="";
+        Connection cnx = conexion.getConexion();
+        
+        Statement st = cnx.createStatement();
+        
+        String consulta = "SELECT ID_JUGADOR FROM JUGADORES WHERE nombre = '"+nombre+"' " ;
+        
+        ResultSet res = st.executeQuery(consulta);
+        while(res.next()){
+            id=res.getString("id_jugador");
+        }
+        
+        return id;
+    }
+    
+    public static ArrayList<Juego> getPuntuaciones() throws SQLException{
+        ArrayList<Juego> juegos = new ArrayList<>();
+        
+        Connection cnx = conexion.getConexion();
+        
+        Statement st = cnx.createStatement();
+        
+        String consulta = "select nombre, dinero from juegos inner join JUGADORES on JUGADORES_ID_JUGADOR=ID_JUGADOR order by dinero desc";
+        
+        ResultSet res = st.executeQuery(consulta);
+        
+        while(res.next()){
+            Juego juego = new Juego(res.getString("nombre"), res.getString("dinero"));
+            juegos.add(juego);
+        }
+        
+        return juegos;
     }
 }

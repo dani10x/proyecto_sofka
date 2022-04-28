@@ -378,6 +378,7 @@ public class configuracion extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(configuracion.class.getName()).log(Level.SEVERE, null, ex);
         }
+        daos.setJugador(jugador);
         pantalla_de_juego juego = new pantalla_de_juego(daos);
         juego.iniciar();
         this.dispose();

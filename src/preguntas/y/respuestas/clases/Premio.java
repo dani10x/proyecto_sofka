@@ -21,7 +21,7 @@ public class Premio {
                 break;
             case 2: dinero=100;
                 break;
-            default: dinero=500*(r.getNumRonda());
+            default: dinero=500*(r.getNumRonda()-2);
         }
     }
     
@@ -29,5 +29,7 @@ public class Premio {
         dinero=0;
     }
     
-    
+    public void setDinero(String dinero){
+        this.dinero = Integer.parseInt(dinero);
+    }
 }

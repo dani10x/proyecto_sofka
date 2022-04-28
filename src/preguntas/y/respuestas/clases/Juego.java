@@ -1,5 +1,7 @@
 package preguntas.y.respuestas.clases;
 
+import java.sql.SQLException;
+
 /**
  *
  * @author Daniel Alzate
@@ -7,15 +9,17 @@ package preguntas.y.respuestas.clases;
 public class Juego {
     private final Jugador jugador;
     private final Premio premio;
-    private Ronda ronda;
-    private Pregunta pregunta;
-    private Categoria categoria;
-    private DAOS daos;
 
-    public Juego(Jugador jugador, DAOS daos) {
+    public Juego(Jugador jugador, Premio premio) throws SQLException {
         this.jugador = jugador;
-        premio = new Premio();
-        this.daos=daos;
+        this.premio=premio;
+        this.jugador.setId_Jugador();
+    }
+    
+    public Juego(String jugador, String premio){
+        this.jugador= new Jugador(jugador);
+        this.premio = new Premio();
+        this.premio.setDinero(premio);
     }
 
     public Jugador getJugador() {
@@ -25,9 +29,4 @@ public class Juego {
     public Premio getPremio() {
         return premio;
     }
-    
-    public void nuevaPregunta(){
-        pregunta= daos.getPregunta(categoria);
-    }
-
 }

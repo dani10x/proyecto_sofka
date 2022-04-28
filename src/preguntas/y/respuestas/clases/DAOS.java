@@ -12,6 +12,7 @@ public class DAOS {
     private ArrayList<Pregunta> preguntas;
     private ArrayList<Respuesta> respuestas;
     private ArrayList<Categoria> categorias;
+    private ArrayList<Juego> juegos;
     private Juego juego;
     private Jugador jugador;
 
@@ -30,24 +31,6 @@ public class DAOS {
         categorias = consultas.getCategoria();
     }
     
-    public void print(){
-        preguntas.forEach(pregunta ->{
-            System.out.println(pregunta.getPregunta());
-        });
-        
-        System.out.println("---");
-        respuestas.forEach(respuesta ->{
-            System.out.println(respuesta.getRespuesta());
-        });
-        
-        System.out.println("-----");
-        
-        System.out.println("---");
-        categorias.forEach(categoria ->{
-            System.out.println(categoria.getNumCategoria());
-        });
-    }
-    
     public Categoria getCategoria(int numRonda){
         for(int i=0; i<categorias.size(); i++){
             if(numRonda==categorias.get(i).getNumCategoria()){
@@ -59,9 +42,7 @@ public class DAOS {
     
     public Pregunta getPregunta(Categoria categoria){
         int random=(int) Math.floor(Math.random()*(5)+1);
-        System.out.println(random);
         for(int i=0; i<preguntas.size(); i++){
-            System.out.println("--");
             if(preguntas.get(i).getId_categoria().equals(categoria.getId_Categoria())){
                 if(random==1){
                     return preguntas.get(i);
@@ -89,4 +70,22 @@ public class DAOS {
         }
         return null;
     }
+
+    public Jugador getJugador() {
+        return jugador;
+    }
+
+    public void setJugador(Jugador jugador) {
+        this.jugador = jugador;
+    }
+    
+    public void cargarJuegos() throws SQLException{
+        juegos = consultas.getPuntuaciones();
+    }
+
+    public ArrayList<Juego> getJuegos() {
+        return juegos;
+    }
+    
+    
 }

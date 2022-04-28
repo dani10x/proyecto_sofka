@@ -1,14 +1,16 @@
 package preguntas.y.respuestas.clases;
 
+import java.sql.SQLException;
+
 /**
  *
  * @author Daniel Alzate 
  */
 public final class Jugador {
-    private int Id_Jugador;
-    private final String Nombre;
+    private String Id_Jugador;
+    private String Nombre;
 
-    public Jugador(int Id_Jugador, String Nombre) {
+    public Jugador(String Id_Jugador, String Nombre) {
         this.Id_Jugador = Id_Jugador;
         this.Nombre = Nombre;
     }
@@ -17,12 +19,15 @@ public final class Jugador {
         this.Nombre=Nombre;
     }
 
-    public int getId_Jugador() {
+    public String getId_Jugador() {
         return Id_Jugador;
     }
 
     public String getNombre() {
         return Nombre;
     }
-    
+
+    public void setId_Jugador() throws SQLException {
+        this.Id_Jugador=sql.consultas.getId_Jugador(Nombre);
+    }
 }

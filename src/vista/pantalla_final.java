@@ -17,6 +17,8 @@ public class pantalla_final extends javax.swing.JFrame {
         initComponents();
         this.daos=daos;
         this.premio=premio;
+        puntuacion.setText("¡"+premio.getDinero()+"!");
+        nombre_jugador.setText("Felicidades " + daos.getJugador().getNombre());
     }
     
     private int xMouse, yMouse;

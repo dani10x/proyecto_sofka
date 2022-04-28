@@ -1,7 +1,12 @@
 package vista;
 
 import java.awt.Color;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import preguntas.y.respuestas.clases.DAOS;
+import preguntas.y.respuestas.clases.Juego;
 
 /**
  *
@@ -12,14 +17,25 @@ public class puntuaciones extends javax.swing.JFrame {
     /**
      * Creates new form puntuaciones
      */
-    public puntuaciones(DAOS daos) {
+    public puntuaciones(DAOS daos) throws SQLException {
         initComponents();
         this.daos=daos;
-        
+        daos.cargarJuegos();
+        juegos = daos.getJuegos();
+        String text ="";
+        for(int i=0; i<juegos.size(); i++){
+            text +=juegos.get(i).getJugador().getNombre();
+            text += "\t  " + juegos.get(i).getPremio().getDinero();
+            text+="\n";
+        }
+        jugadores.setText(text);
     }
+    
     
     private int xMouse, yMouse;
     private DAOS daos;
+    private ArrayList<Juego> juegos;
+            
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -247,7 +263,11 @@ public class puntuaciones extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new puntuaciones(daos).setVisible(true);
+                try {
+                    new puntuaciones(daos).setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(puntuaciones.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
