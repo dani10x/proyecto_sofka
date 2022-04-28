@@ -32,4 +32,8 @@ public class Premio {
     public void setDinero(String dinero){
         this.dinero = Integer.parseInt(dinero);
     }
+    
+    public void setMaximo(){
+        dinero=2000;
+    }
 }

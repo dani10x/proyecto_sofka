@@ -438,7 +438,7 @@ public class pantalla_de_juego extends javax.swing.JFrame {
     private void respuestaAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_respuestaAMouseClicked
         if (respuestas.get(0).isCorrecta()) {
             if (rondas.getNumRonda() == 5) {
-                premio.setDinero(rondas);
+                premio.setMaximo();
                 try {
                     finalJuego();
                 } catch (SQLException ex) {
@@ -461,7 +461,7 @@ public class pantalla_de_juego extends javax.swing.JFrame {
     private void respuestaCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_respuestaCMouseClicked
         if (respuestas.get(2).isCorrecta()) {
             if (rondas.getNumRonda() == 5) {
-                premio.setDinero(rondas);
+                premio.setMaximo();
                 try {
                     finalJuego();
                 } catch (SQLException ex) {
@@ -485,7 +485,7 @@ public class pantalla_de_juego extends javax.swing.JFrame {
     private void respuestaBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_respuestaBMouseClicked
         if (respuestas.get(1).isCorrecta()) {
             if (rondas.getNumRonda() == 5) {
-                premio.setDinero(rondas);
+                premio.setMaximo();
                 try {
                     finalJuego();
                 } catch (SQLException ex) {
@@ -508,7 +508,7 @@ public class pantalla_de_juego extends javax.swing.JFrame {
     private void respuestaDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_respuestaDMouseClicked
         if (respuestas.get(3).isCorrecta()) {
             if (rondas.getNumRonda() == 5) {
-                premio.setDinero(rondas);
+                premio.setMaximo();
                 try {
                     finalJuego();
                 } catch (SQLException ex) {
@@ -570,12 +570,10 @@ public class pantalla_de_juego extends javax.swing.JFrame {
     }
 
     private void finalJuego() throws SQLException {
-
         Juego juego = new Juego(daos.getJugador(), premio);
         sql.inserciones.insertarJuego(juego);
         pantalla_final.main(daos, premio);
         this.dispose();
-
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
