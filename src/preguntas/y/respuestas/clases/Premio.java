@@ -17,10 +17,16 @@ public class Premio {
 
     public void setDinero(Ronda r) {
         switch(r.getNumRonda()){
-            case 1: dinero=100;
+            case 1: dinero=0;
                 break;
-            default: dinero=500*(r.getNumRonda()-1);
+            case 2: dinero=100;
+                break;
+            default: dinero=500*(r.getNumRonda());
         }
+    }
+    
+    public void reset(){
+        dinero=0;
     }
     
     

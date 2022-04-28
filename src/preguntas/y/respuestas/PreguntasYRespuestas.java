@@ -2,6 +2,7 @@ package preguntas.y.respuestas;
 
 import java.sql.SQLException;
 import preguntas.y.respuestas.clases.DAOS;
+import vista.inicio;
 
 /**
  *
@@ -22,7 +23,7 @@ public class PreguntasYRespuestas {
 //        pantalla_de_juego.main(args);
         DAOS daos = new DAOS();
         daos.iniciar();
-        daos.print();
+        inicio.main(daos);
     }
     
 }

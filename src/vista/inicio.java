@@ -1,6 +1,7 @@
 package vista;
 
 import java.awt.Color;
+import preguntas.y.respuestas.clases.DAOS;
 
 /**
  *
@@ -11,11 +12,13 @@ public class inicio extends javax.swing.JFrame {
     /**
      * Creates new form inicio
      */
-    public inicio() {
+    public inicio(DAOS daos) {
         initComponents();
+        this.daos=daos;
     }
     
     int xMouse, yMouse;
+    private DAOS daos;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -291,18 +294,18 @@ public class inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPuntuacionnesMouseExited
 
     private void btnJugarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnJugarMouseClicked
-        configuracion.main();
+        configuracion.main(daos);
         this.dispose();
     }//GEN-LAST:event_btnJugarMouseClicked
 
     private void btnPuntuacionnesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPuntuacionnesMouseClicked
-        vista.puntuaciones.main();
+        vista.puntuaciones.main(daos);
         this.dispose();
     }//GEN-LAST:event_btnPuntuacionnesMouseClicked
 
     /**
      */
-    public static void main() {
+    public static void main(DAOS daos) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -329,7 +332,7 @@ public class inicio extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new inicio().setVisible(true);
+                new inicio(daos).setVisible(true);
             }
         });
     }

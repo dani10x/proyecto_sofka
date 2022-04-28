@@ -2,7 +2,6 @@ package preguntas.y.respuestas.clases;
 
 import sql.consultas;
 import java.util.ArrayList;
-import vista.inicio;
 import java.sql.SQLException;
 
 /**
@@ -22,7 +21,6 @@ public class DAOS {
     
     public void iniciar() throws SQLException{
         cargarArrays();
-        inicio.main();
     }
     
     
@@ -49,13 +47,21 @@ public class DAOS {
             System.out.println(categoria.getNumCategoria());
         });
     }
-    public void iniciarJuego(){
+    
+    public Categoria getCategoria(int numRonda){
+        for(int i=0; i<categorias.size(); i++){
+            if(numRonda==categorias.get(i).getNumCategoria()){
+                return categorias.get(i);
+            }
+        }
+        return null;
     }
     
     public Pregunta getPregunta(Categoria categoria){
         int random=(int) Math.floor(Math.random()*(5)+1);
         System.out.println(random);
         for(int i=0; i<preguntas.size(); i++){
+            System.out.println("--");
             if(preguntas.get(i).getId_categoria().equals(categoria.getId_Categoria())){
                 if(random==1){
                     return preguntas.get(i);
@@ -64,5 +70,23 @@ public class DAOS {
             }
         }
         return null;
-    }  
+    }
+    
+    public ArrayList<Respuesta> getRespuestas(ArrayList<String> id_preguntas){
+        ArrayList<Respuesta> respuestas = new ArrayList<>();
+        for(int i=0; i<id_preguntas.size(); i++){
+            respuestas.add(getRespuestas(id_preguntas.get(i)));
+        }
+        
+        return respuestas;
+    }
+    
+    private Respuesta getRespuestas(String id_respuesta){
+        for(int i=0; i<respuestas.size(); i++){
+            if(respuestas.get(i).getId_Respuesta().equals(id_respuesta)){
+                return respuestas.get(i);
+            }
+        }
+        return null;
+    }
 }

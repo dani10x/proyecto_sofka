@@ -1,6 +1,7 @@
 package vista;
 
 import java.awt.Color;
+import preguntas.y.respuestas.clases.DAOS;
 
 /**
  *
@@ -11,11 +12,14 @@ public class puntuaciones extends javax.swing.JFrame {
     /**
      * Creates new form puntuaciones
      */
-    public puntuaciones() {
+    public puntuaciones(DAOS daos) {
         initComponents();
+        this.daos=daos;
+        
     }
     
     private int xMouse, yMouse;
+    private DAOS daos;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -200,7 +204,7 @@ public class puntuaciones extends javax.swing.JFrame {
     }//GEN-LAST:event_panelSuperiorMousePressed
 
     private void btnVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVolverMouseClicked
-        inicio.main();
+        inicio.main(daos);
         this.dispose();
     }//GEN-LAST:event_btnVolverMouseClicked
 
@@ -216,7 +220,7 @@ public class puntuaciones extends javax.swing.JFrame {
 
     /**
      */
-    public static void main() {
+    public static void main(DAOS daos) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -243,7 +247,7 @@ public class puntuaciones extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new puntuaciones().setVisible(true);
+                new puntuaciones(daos).setVisible(true);
             }
         });
     }

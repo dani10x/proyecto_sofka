@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import preguntas.y.respuestas.clases.DAOS;
 import preguntas.y.respuestas.clases.Jugador;
 import sql.inserciones;
 
@@ -16,13 +17,15 @@ public class configuracion extends javax.swing.JFrame {
     /**
      * Creates new form configuracion
      */
-    public configuracion() {
+    public configuracion(DAOS daos) {
         initComponents();
         this.explicacion.setVisible(false);
         this.advertencia.setVisible(false);
+        this.daos=daos;
     }
     
     int xMouse, yMouse;
+    private DAOS daos;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -318,7 +321,7 @@ public class configuracion extends javax.swing.JFrame {
     }//GEN-LAST:event_panelSuperiorMousePressed
 
     private void btnVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVolverMouseClicked
-        inicio.main();
+        inicio.main(daos);
         this.dispose();
     }//GEN-LAST:event_btnVolverMouseClicked
 
@@ -375,13 +378,14 @@ public class configuracion extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(configuracion.class.getName()).log(Level.SEVERE, null, ex);
         }
-        pantalla_de_juego.main();
+        pantalla_de_juego juego = new pantalla_de_juego(daos);
+        juego.iniciar();
         this.dispose();
     }//GEN-LAST:event_btnJugarMouseClicked
 
     /**
      */
-    public static void main() {
+    public static void main(DAOS daos) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -408,7 +412,7 @@ public class configuracion extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new configuracion().setVisible(true);
+                new configuracion(daos).setVisible(true);
             }
         });
     }

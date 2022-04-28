@@ -1,6 +1,8 @@
 package vista;
 
 import java.awt.Color;
+import preguntas.y.respuestas.clases.DAOS;
+import preguntas.y.respuestas.clases.Premio;
 
 /**
  *
@@ -11,11 +13,15 @@ public class pantalla_final extends javax.swing.JFrame {
     /**
      * Creates new form pantalla_final
      */
-    public pantalla_final() {
+    public pantalla_final(DAOS daos, Premio premio) {
         initComponents();
+        this.daos=daos;
+        this.premio=premio;
     }
     
-    int xMouse, yMouse;
+    private int xMouse, yMouse;
+    private DAOS daos;
+    private Premio premio;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -275,7 +281,7 @@ public class pantalla_final extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCloseMouseExited
 
     private void btnVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVolverMouseClicked
-        inicio.main();
+        inicio.main(daos);
         this.dispose();
     }//GEN-LAST:event_btnVolverMouseClicked
 
@@ -289,7 +295,7 @@ public class pantalla_final extends javax.swing.JFrame {
 
     /**
      */
-    public static void main() {
+    public static void main(DAOS daos, Premio premio) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -316,7 +322,7 @@ public class pantalla_final extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new pantalla_final().setVisible(true);
+                new pantalla_final(daos, premio).setVisible(true);
             }
         });
     }
