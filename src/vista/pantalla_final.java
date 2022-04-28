@@ -275,7 +275,8 @@ public class pantalla_final extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCloseMouseExited
 
     private void btnVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVolverMouseClicked
-        
+        inicio.main();
+        this.dispose();
     }//GEN-LAST:event_btnVolverMouseClicked
 
     private void btnVolverMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVolverMouseEntered
@@ -287,9 +288,8 @@ public class pantalla_final extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVolverMouseExited
 
     /**
-     * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

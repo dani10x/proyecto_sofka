@@ -218,6 +218,9 @@ public class pantalla_de_juego extends javax.swing.JFrame {
         btnRendirse.setBackground(new java.awt.Color(0, 0, 51));
         btnRendirse.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnRendirse.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnRendirseMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnRendirseMouseEntered(evt);
             }
@@ -320,16 +323,16 @@ public class pantalla_de_juego extends javax.swing.JFrame {
     }//GEN-LAST:event_panelSuperiorMousePressed
 
     private void btnVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVolverMouseClicked
-        System.exit(0);
+        inicio.main();
+        this.dispose();
     }//GEN-LAST:event_btnVolverMouseClicked
 
     private void btnVolverMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVolverMouseEntered
         btnVolver.setBackground(new Color(0, 255, 0));
-        volver.setForeground(Color.white);
     }//GEN-LAST:event_btnVolverMouseEntered
 
     private void btnVolverMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVolverMouseExited
-        btnVolver.setBackground(new Color(0, 0, 51));
+        btnVolver.setBackground(Color.white);
     }//GEN-LAST:event_btnVolverMouseExited
 
     private void respuestaDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_respuestaDActionPerformed
@@ -338,18 +341,20 @@ public class pantalla_de_juego extends javax.swing.JFrame {
 
     private void btnRendirseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRendirseMouseEntered
         btnRendirse.setBackground(Color.red);
-        rendirse.setForeground(Color.white);
     }//GEN-LAST:event_btnRendirseMouseEntered
 
     private void btnRendirseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRendirseMouseExited
-        btnRendirse.setBackground(Color.WHITE);
-        rendirse.setForeground(new Color(0, 0, 51));
+        btnRendirse.setBackground(new Color(0, 0, 51));
     }//GEN-LAST:event_btnRendirseMouseExited
 
+    private void btnRendirseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRendirseMouseClicked
+        pantalla_final.main();
+        this.dispose();
+    }//GEN-LAST:event_btnRendirseMouseClicked
+
     /**
-     * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

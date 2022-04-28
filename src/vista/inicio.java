@@ -127,6 +127,9 @@ public class inicio extends javax.swing.JFrame {
         btnJugar.setBackground(new java.awt.Color(0, 0, 51));
         btnJugar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnJugar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnJugarMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnJugarMouseEntered(evt);
             }
@@ -155,6 +158,9 @@ public class inicio extends javax.swing.JFrame {
         btnPuntuacionnes.setBackground(new java.awt.Color(0, 0, 51));
         btnPuntuacionnes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnPuntuacionnes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnPuntuacionnesMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnPuntuacionnesMouseEntered(evt);
             }
@@ -284,10 +290,19 @@ public class inicio extends javax.swing.JFrame {
         btnPuntuacionnes.setBackground(new Color(0, 0, 51));
     }//GEN-LAST:event_btnPuntuacionnesMouseExited
 
+    private void btnJugarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnJugarMouseClicked
+        configuracion.main();
+        this.dispose();
+    }//GEN-LAST:event_btnJugarMouseClicked
+
+    private void btnPuntuacionnesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPuntuacionnesMouseClicked
+        vista.puntuaciones.main();
+        this.dispose();
+    }//GEN-LAST:event_btnPuntuacionnesMouseClicked
+
     /**
-     * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -329,7 +344,6 @@ public class inicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel jugar;
     private javax.swing.JPanel panelContenedor;
     private javax.swing.JPanel panelSuperior;

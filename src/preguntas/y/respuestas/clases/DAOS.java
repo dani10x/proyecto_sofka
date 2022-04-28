@@ -10,7 +10,6 @@ import java.sql.SQLException;
  * @author Daniel Alzate 
  */
 public class DAOS {
-    private inicio inicial;
     private ArrayList<Pregunta> preguntas;
     private ArrayList<Respuesta> respuestas;
     private ArrayList<Categoria> categorias;
@@ -21,6 +20,7 @@ public class DAOS {
     
     public void iniciar() throws SQLException{
         cargarArrays();
+        inicio.main();
     }
     
     

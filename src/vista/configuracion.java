@@ -31,8 +31,8 @@ public class configuracion extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         panelSuperior = new javax.swing.JPanel();
         icon = new javax.swing.JLabel();
-        btnClose = new javax.swing.JPanel();
-        close = new javax.swing.JLabel();
+        btnVolver = new javax.swing.JPanel();
+        volver = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
@@ -85,39 +85,39 @@ public class configuracion extends javax.swing.JFrame {
 
         jPanel1.add(panelSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 30));
 
-        btnClose.setBackground(new java.awt.Color(255, 255, 255));
-        btnClose.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        btnClose.setForeground(new java.awt.Color(255, 255, 255));
-        btnClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnClose.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnVolver.setBackground(new java.awt.Color(255, 255, 255));
+        btnVolver.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btnVolver.setForeground(new java.awt.Color(255, 255, 255));
+        btnVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnVolver.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnCloseMouseClicked(evt);
+                btnVolverMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnCloseMouseEntered(evt);
+                btnVolverMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnCloseMouseExited(evt);
+                btnVolverMouseExited(evt);
             }
         });
 
-        close.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        close.setForeground(new java.awt.Color(0, 0, 0));
-        close.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        close.setText("X");
+        volver.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        volver.setForeground(new java.awt.Color(0, 0, 0));
+        volver.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver (1).png"))); // NOI18N
 
-        javax.swing.GroupLayout btnCloseLayout = new javax.swing.GroupLayout(btnClose);
-        btnClose.setLayout(btnCloseLayout);
-        btnCloseLayout.setHorizontalGroup(
-            btnCloseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(close, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+        javax.swing.GroupLayout btnVolverLayout = new javax.swing.GroupLayout(btnVolver);
+        btnVolver.setLayout(btnVolverLayout);
+        btnVolverLayout.setHorizontalGroup(
+            btnVolverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(volver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        btnCloseLayout.setVerticalGroup(
-            btnCloseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(close, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+        btnVolverLayout.setVerticalGroup(
+            btnVolverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(volver, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
         );
 
-        jPanel1.add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 30, 30));
+        jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 30, 30));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -312,19 +312,18 @@ public class configuracion extends javax.swing.JFrame {
         yMouse = evt.getY();
     }//GEN-LAST:event_panelSuperiorMousePressed
 
-    private void btnCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_btnCloseMouseClicked
+    private void btnVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVolverMouseClicked
+        inicio.main();
+        this.dispose();
+    }//GEN-LAST:event_btnVolverMouseClicked
 
-    private void btnCloseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseEntered
-        btnClose.setBackground(Color.red);
-        close.setForeground(Color.white);
-    }//GEN-LAST:event_btnCloseMouseEntered
+    private void btnVolverMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVolverMouseEntered
+        btnVolver.setBackground(new Color(0, 255, 0));
+    }//GEN-LAST:event_btnVolverMouseEntered
 
-    private void btnCloseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseExited
-        btnClose.setBackground(Color.white);
-        close.setForeground(Color.BLACK);
-    }//GEN-LAST:event_btnCloseMouseExited
+    private void btnVolverMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVolverMouseExited
+        btnVolver.setBackground(Color.white);
+    }//GEN-LAST:event_btnVolverMouseExited
 
     private void tutorialMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tutorialMouseEntered
         this.explicacion.setVisible(true);
@@ -365,14 +364,13 @@ public class configuracion extends javax.swing.JFrame {
             advertencia.setVisible(true);
             return;
         }
-        //action
-        System.out.println("");
+        pantalla_de_juego.main();
+        this.dispose();
     }//GEN-LAST:event_btnJugarMouseClicked
 
     /**
-     * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -406,9 +404,8 @@ public class configuracion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel advertencia;
-    private javax.swing.JPanel btnClose;
     private javax.swing.JPanel btnJugar;
-    private javax.swing.JLabel close;
+    private javax.swing.JPanel btnVolver;
     private javax.swing.JTextArea explicacion;
     private javax.swing.JLabel icon;
     private javax.swing.JLabel jLabel1;
@@ -423,5 +420,6 @@ public class configuracion extends javax.swing.JFrame {
     private javax.swing.JTextField nombre;
     private javax.swing.JPanel panelSuperior;
     private javax.swing.JLabel tutorial;
+    private javax.swing.JLabel volver;
     // End of variables declaration//GEN-END:variables
 }
